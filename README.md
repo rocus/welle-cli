@@ -1,6 +1,6 @@
-This is a small change (hack) in the origional welle-cli repository of AlbrechtL. (see below) 
+This is a small change (hack) in the original welle-cli repository of AlbrechtL. (see below) 
 
-I use welle-cli as a DAB radio station server for several audio streamers at my house. The origional welle-cli works well but is not
+I use welle-cli as a DAB radio station server for several audio streamers at my house. The original welle-cli works well but is not
 able to stream a radio station from an other channel than the one chosen at the start of welle-cli. That is you must change the channel
 in the web interface and my streamers are simply not able to do that. So I added the channelnumber of the radio I want to listen to , 
 to the URL my streamers send to the radio server (that is welle-cli running at 10.0.2.162:8888):
@@ -14,8 +14,12 @@ http://10.0.2.162:8888/mp3/0x1057
 If a channel change is needed because your previous station was on another channel, that will be initiated. It takes some time and on 
 your streamer you will get a message that the server is down or there was no connection possible. After some time (2-10 seconds) 
 you must choose this radio station again (in my example id 1057) and hopefully that will connect the second time. 
-It seems difficult to me to achieve the switch in one step and that you can see as a major disadvantage of my hack.
+It seems difficult to me to achieve the switch in one step and you may see that as a major disadvantage of my hack.
 
+
+I build welle-cli with this, very small hack, for a (headless) Raspberry Pi 3 with a RTL-SDR stick and it worked well but the load on my raspberry
+is quite high (200%). One small remark (I filed this as an issue at the github site of AlbrechtL): you must add xxd as a non QT package you
+must have installed. For building I called "cmake .. -DBUILD_WELLE_IO=OFF -DRTLSDR=1" in the build directory and subsequently a "make".
 
 
 
