@@ -1,7 +1,7 @@
 This is a small change (hack) in the original welle-cli repository of AlbrechtL. (see below) 
 
 I use welle-cli as a DAB radio station server for several audio streamers at my house. The original welle-cli works well but is not
-able to stream a radio station from an other channel than the one chosen at the start of welle-cli. That is you must change the channel
+able to stream a radio station from an other channel than the one chosen at the start of welle-cli. That is: you must change the channel
 in the web interface and my streamers are simply not able to do that. So I added the channelnumber of the radio I want to listen to , 
 to the URL my streamers send to the radio server (that is welle-cli running at 10.0.2.162:8888):
 
