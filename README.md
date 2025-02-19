@@ -1,3 +1,24 @@
+This is a small change (hack) in the origional welle-cli repository of AlbrechtL. (see below) 
+
+I use welle-cli as a DAB radio station server for several audio streamers at my house. The origional welle-cli works well but is not
+able to stream a radio station from an other channel than the one chosen at the start of welle-cli. That is you must change the channel
+in the web interface and my streamers are simply not able to do that. So I added the channelnumber of the radio I want to listen to , 
+to the URL my streamers send to the radio server (that is welle-cli running at 10.0.2.162:8888):
+
+http://10.0.2.162:8888/mp3/0x1057/5D
+
+where it used to be:
+
+http://10.0.2.162:8888/mp3/0x1057
+
+If a channel change is needed because your previous station was on another channel, that will be initiated. It takes some time and on 
+your streamer you will get a message that the server is down or there was no connection possible. After some time (2-10 seconds) 
+you must choose this radio station again (in my example id 1057) and hopefully that will connect the second time. 
+It seems difficult to me to achieve the switch in one step and that you can see as a major disadvantage of my hack.
+
+
+
+
 [welle.io](https://www.welle.io)
 =====================
 - Linux (AppImage): [![Linux build](https://github.com/AlbrechtL/welle.io/actions/workflows/linux.yml/badge.svg)](https://github.com/AlbrechtL/welle.io/actions/workflows/linux.yml)
